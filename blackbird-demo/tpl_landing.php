@@ -2,8 +2,9 @@
 Template Name: Landing Page
 */ ?>
 <?php define('WP_USE_THEMES', true); get_header(); ?>
-
-  <section id="banner" class="style2">
+  
+  <?php $post_img_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+  <section id="banner" class="style2" style="background: url('<?php echo $post_img_url ?>')">
     <div class="inner">
       <span class="image">
         <img src="/" />

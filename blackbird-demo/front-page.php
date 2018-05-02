@@ -13,7 +13,9 @@
 <?php if ( is_front_page() && !is_home() ) : ?> <!-- If homepage displays as > static page -->
 
   <!-- Banner -->
-  <section id="banner" class="major">
+  <?php $post_img_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+  
+  <section id="banner" class="major" style="background: url('<?php echo $post_img_url ?>')">
     <div class="inner">
       <header class="major">
         <h1><?php the_title(); ?></h1>
@@ -65,7 +67,7 @@
                   <img src="<?php echo $post_img_url ?>"/>
 
                 </span>
-                
+
                 <header class="major">
                   <h3>
                     <a class="link" href="<?php the_permalink(); ?>">
