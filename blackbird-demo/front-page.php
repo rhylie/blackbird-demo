@@ -60,8 +60,12 @@
               <article>
 
                 <span class="image">
-                  <img src="/" alt=""/>
+
+                  <?php $post_img_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+                  <img src="<?php echo $post_img_url ?>"/>
+
                 </span>
+                
                 <header class="major">
                   <h3>
                     <a class="link" href="<?php the_permalink(); ?>">
@@ -151,31 +155,34 @@
 
         <section>
 
-          <!-- <form method="post" action="#">
+          <form method="post" action="#">
+
             <div class="field half first">
               <label for="name">Name</label>
               <input type="text" name="name" id="name" />
             </div>
+
             <div class="field half">
               <label for="email">Email</label>
               <input type="text" name="email" id="email" />
             </div>
+
             <div class="field">
               <label for="message">Message</label>
               <textarea name="message" id="message" rows="6"></textarea>
             </div>
+
             <ul class="actions">
               <li><input type="submit" value="Send Message" class="special" /></li>
               <li><input type="reset" value="Clear" /></li>
             </ul>
-          </form> -->
 
-          <!-- Load WPForms Builder -->
+          </form>
+
           <!-- TO DO, FORM NEEDS TO BE STYLED AS PER MOCKUP -->
-          <?php 
+          <!-- <?php 
             echo do_shortcode( '[wpforms id="72" title="false" description="false"]' );
-          ?>
-          
+          ?> -->
 
         </section>
 

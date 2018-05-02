@@ -6,7 +6,7 @@ Template Name: Landing Page
   <section id="banner" class="style2">
     <div class="inner">
       <span class="image">
-        <img src="images/pic07.jpg" alt="" />
+        <img src="/" />
       </span>
       <header class="major">
         <h1><?php the_title(); ?></h1>
@@ -63,8 +63,9 @@ Template Name: Landing Page
 
               <section>
                 <!-- Begins structure of post -->
-                <a href="/" class="image">
-                  <img src="/" alt="" data-position="center center" />
+                <a href="<?php the_permalink(); ?>" class="image">
+                  <?php $post_img_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+                  <img src="<?php echo $post_img_url ?>" data-position="center center" alt="" />
                 </a>
                 <div class="content">
                   <div class="inner">
