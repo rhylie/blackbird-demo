@@ -20,14 +20,12 @@
       </header>
       <div class="content">
 
-        <?php 
-          while ( have_posts() ) : the_post();
-        ?>
-        <?php the_content(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+          <?php the_content(); ?>
 
         <?php
-        endwhile; //resetting the page loop
-        wp_reset_query(); //resetting the page query
+          endwhile; //resetting the page loop
+          wp_reset_query(); //resetting the page query
         ?>
 
         <ul class="actions">
@@ -147,8 +145,6 @@
 
 <?php endif; ?><!-- Ends conditional statement, responsibile for displaying alt index.php -->
 
-
-
   <!-- Contact -->
     <section id="contact">
       <div class="inner">
@@ -175,6 +171,7 @@
           </form> -->
 
           <!-- Load WPForms Builder -->
+          <!-- TO DO, FORM NEEDS TO BE STYLED AS PER MOCKUP -->
           <?php 
             echo do_shortcode( '[wpforms id="72" title="false" description="false"]' );
           ?>
@@ -184,35 +181,12 @@
 
         <section class="split">
 
-          <section>
-            <div class="contact-method">
-              <span class="icon alt fa-envelope"></span>
-              <h3>Email</h3>
-              <a href="#">information@untitled.tld</a>
-            </div>
-          </section>
-
-          <section>
-            <div class="contact-method">
-              <span class="icon alt fa-phone"></span>
-              <h3>Phone</h3>
-              <span>(000) 000-0000 x12387</span>
-            </div>
-          </section>
-
-          <section>
-            <div class="contact-method">
-              <span class="icon alt fa-home"></span>
-              <h3>Address</h3>
-              <span>1234 Somewhere Road #5432<br />
-              Nashville, TN 00000<br />
-              United States of America</span>
-            </div>
-          </section>
+          <?php get_sidebar(); ?>
 
         </section>
 
       </div><!-- /.ends #inner -->
+
     </section>
 
 <?php get_footer(); ?>

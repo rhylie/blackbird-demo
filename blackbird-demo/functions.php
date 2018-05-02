@@ -122,7 +122,6 @@ add_action( 'widgets_init', 'blackbird_demo_widgets_init' );
 function blackbird_demo_scripts() {
 	wp_enqueue_style( 'blackbird-demo-style', get_stylesheet_uri() );
 
-	//wp_enqueue_script( 'blackbird-demo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'blackbird-demo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'blackbird-demo-jquery-min', get_template_directory_uri() . '/js/jquery.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'blackbird-demo-jquery-scrollex-min', get_template_directory_uri() . '/js/jquery.scrollex.min.js', array(), '20151215', true );
